@@ -160,11 +160,11 @@
     urlbordercolor={[rgb]{0.8,0,0.8}},%
     runbordercolor={[rgb]{0.8,0,0.8}},%
     menubordercolor={[rgb]{0,0.2,0.6}},% 
-    pdftitle={Proyecto: Aceleradores de partículas},%
+    pdftitle={Tarea 2},%
     pdfauthor={López Merino Marcos},%
-    pdfsubject={Temas Selectos de Física de Radiaciones I},%
-    pdfkeywords={Facultad de Ciencias, UNAM, Temas Selectos de Física de Radiaciones I, Aceleradores de partículas, Acelerador Van de Graaff, Ciclotrón, Sincrotón},%
-    unicode = true%
+    pdfsubject={Física Nuclear y Subnuclear},%
+    pdfkeywords={Facultad de Ciencias, UNAM, Física Nuclear y Subnuclear},%
+    unicode=true%
 }
 
 %%%%%%%%%%%%%%%%%%siunitx configuration%%%%%%%%%%%%%%%%%%
@@ -200,11 +200,11 @@
 }
 
 %%%%%%%%%%%%%%%%%%Nuevos comandos%%%%%%%%%%%%%%%%%%
-\newcommand*{\group}{8379}
-\newcommand*{\classname}{Temas Selectos de Física de Radiaciones I}
-\newcommand*{\homeworknumber}{Proyecto: Aceleradores de partículas}
+\newcommand*{\group}{8426}
+\newcommand*{\classname}{Física Nuclear y Subnuclear}
+\newcommand*{\homeworknumber}{Tarea 2}
 \newcommand*{\name}{Marcos López Merino}
-\DTMsavedate{duedate}{2023-09-13}
+\DTMsavedate{duedate}{2023-09-12}
 
 % unit vector i
 \newcommand*{\uveci}{{\bm{\hat{\textnormal{\bfseries\i}}}}}
@@ -318,5 +318,27 @@
     \maketitle
     \thispagestyle{fancy}
 
-    \kant[1-3]
+    % Problema 1
+    \subfile{exercises/exercise1.tex}
+
+    % Problema 2
+    \subfileinclude{exercises/exercise2.tex}
+
+    % Problema 3
+    \subfileinclude{exercises/exercise3.tex}
+    
+    % Problema 4
+    \subfileinclude{exercises/exercise4.tex}
+
+    % Problema 5
+    \subfileinclude{exercises/exercise5.tex}
+
+    % Problema 6
+    \subfileinclude{exercises/exercise6.tex}
+    
+    % Problema 7
+    \subfileinclude{exercises/exercise7.tex}
+
+    % Problema 8
+    \subfileinclude{exercises/exercise8.tex}
 \end{document}
