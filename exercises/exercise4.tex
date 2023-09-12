@@ -9,5 +9,90 @@
 		\end{equation*}
 
 		De ser posible dibuja su diagrama de Feynman, ¿qué tipo de interacción es?
+
+		\begin{solution}
+			Verificamos las conservaciones, tal que para la energía tenemos
+
+			\begin{equation*}
+				\ch{\(\qty{1197.449}{\MeV}\) -> \(\qty{1115.683}{\MeV}\) + \(\qty{0.511}{\MeV}\) + 0}
+			\end{equation*}
+
+			La energía del lado izquierdo es mayor, por lo que \setulcolor{pinkwave}\ul{la energía se conserva}. Vemos entonces si la carga se conserva,
+
+			\begin{align*}
+				\ch{- \(1\e\) &-> 0 - \(1\e\) + 0},\\
+				\ch{- \(1\e\) &-> - \(1\e\)}.
+			\end{align*}
+
+			\setulcolor{pinkwave}\ul{La carga se conserva}. Ahora veremos si el número bariónico y leptónico se conserva, recordando que \(\Sigma^{-} = dds\) y \(\Lambda^{0} = uds\) son bariones y \(\e^{-},\ \overline{\nu}_{\e}\) son leptones de la misma familia. Así,
+
+			\begin{itemize}
+				\item Número bariónico
+				
+					\begin{align*}
+						\ch{+ 1 &-> + 1},\\
+						\Aboxedmain{&\therefore \text{El número bariónico se conserva.}}
+					\end{align*}
+
+				\item Número leptónico
+				
+					\begin{align*}
+						\ch{0 &-> + \(1_{\e}\) - \(1_{\e}\)},\\
+						\ch{0 &-> 0},\\
+						\Aboxedmain{&\therefore \text{El número leptónico se conserva.}}
+					\end{align*}
+			\end{itemize}
+
+			\pagebreak
+			Además por cómo están definidos \(\Sigma^{-}\) y \(\Lambda^{0}\) debemos verificar si se conserva la extrañeza,
+
+			\begin{equation*}
+				\ch{- 1 -> - 1}.
+			\end{equation*}
+
+			\setulcolor{pinkwave}\ul{La extrañeza se conserva}.
+
+			Dibujamos su diagrama de Feynman,
+
+			\begin{figure}[htb]
+				\centering
+				\begin{tikzpicture}
+					\begin{feynman}
+						% d -> d
+						\vertex (q1) {\(d\)};
+						\vertex [above right=of q1] (a);
+						\vertex [right=of a] (q2) {\(d\)};
+						% s -> s
+						\vertex [below=0.5cm of q1] (q3) {\(s\)};
+						\vertex [above right=of q3] (b);
+						\vertex [right=of b] (q4) {\(s\)};
+						% d -> u
+						\vertex [below=0.5cm of q3] (q5) {\(d\)};
+						\vertex [above right=of q5] (c);
+						\vertex [right=of c] (q6) {\(u\)};
+						% Weak interaction
+						\vertex [below right=6em of c] (d);
+						% electron and electronic neutrino
+						\vertex [below right=of d] (f1) {\(\overline{\nu}_{\e}\)};
+						\vertex [above right=of d] (f2) {\(\e^{-}\)};
+
+						\diagram* {
+							(q1) -- [fermion] (a) -- [fermion] (q2),
+							(q3) -- [fermion] (b) -- [fermion] (q4),
+							(q5) -- [fermion] (c) -- [fermion] (q6),
+							(c) -- [scalar, edge label'=\(W^{-}\)] (d),
+							(f1) -- [fermion] (d) -- [fermion] (f2),
+						};
+
+						\draw [decoration={brace}, decorate, blue] (q5.south west) -- (q1.north west)
+node [pos=0.5, left=0.5cm of q3] {\(\Sigma^{-}\)};
+						\draw [decoration={brace}, decorate] (q2.north east) -- (q6.south east)
+						node [pos=0.5, right=0.5cm of q4] {\(\Lambda^{0}\)};
+					\end{feynman}
+				\end{tikzpicture}
+				\caption{Diagrama de Feynman para el decaimiento de \(\Sigma^{-}\).}
+				\label{fig:sigma-minus-decay}
+			\end{figure}
+		\end{solution}
 	\end{exercise}
 \end{document}
