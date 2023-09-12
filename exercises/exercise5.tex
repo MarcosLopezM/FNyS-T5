@@ -9,5 +9,51 @@
 		\end{equation*}
 
 		Dibuja el diagrama de Feynman. ¿Qué tipo de interacción es?
+
+		\begin{solution}
+			No verificamos la conservación de la energía, pues es una interacción. Por otro lado notemos que en ambos lados de la interacción tenemos los mismos elementos, por lo que inmediatamente se puede ver que la carga, el número leptónico y el número bariónico se conservan. 
+
+			El diagrama de Feynman para la interacción es el siguiente:
+
+			\begin{figure}[htb]
+				\centering
+				\begin{tikzpicture}
+					\begin{feynman}
+						% u -> u
+						\vertex (q1) {\(u\)};
+						\vertex [above right=1.5cm of q1] (a);
+						\vertex [below right=1.2cm of a] (q2) {\(u\)};
+						% u -> u
+						\vertex [below=0.5cm of q1] (q3) {\(u\)};
+						\vertex [above right=1.5cm of q3] (b);
+						\vertex [below right=1.2cm of b] (q4) {\(u\)};
+						% d -> d
+						\vertex [below=0.5cm of q3] (q5) {\(d\)};
+						\vertex [above right=1.5cm of q5] (c);
+						\vertex [below right=1.2cm of c] (q6) {\(d\)};
+						% Weak interaction
+						\vertex [below=8em of c] (d);
+						% electron and electronic neutrino
+						\vertex [below left=of d] (f1) {\(\nu_{\mu}\)};
+						\vertex [below right=of d] (f2) {\(\nu_{\mu}\)};
+
+						\diagram* {
+							(q1) -- [fermion] (a) -- [fermion] (q2),
+							(q3) -- [fermion] (b) -- [fermion] (q4),
+							(q5) -- [fermion] (c) -- [fermion] (q6),
+							(c) -- [scalar, edge label'=\(Z^{0}\)] (d),
+							(f1) -- [fermion] (d) -- [fermion] (f2),
+						};
+
+						\draw [decoration={brace}, decorate, blue] (q5.south west) -- (q1.north west)
+node [pos=0.5, left=0.3cm of q3] {\(p\)};
+						\draw [decoration={brace}, decorate] (q2.north east) -- (q6.south east)
+						node [pos=0.5, right=0.3cm of q4] {\(p\)};
+					\end{feynman}
+				\end{tikzpicture}
+				\caption{Diagrama de Feynman para la interacción \ch{\nu_{\mu} + p -> \nu_{\mu} + p}.}
+				\label{fig:numu-p-numu-p-feynman}
+			\end{figure}
+		\end{solution}
 	\end{exercise}
 \end{document}
