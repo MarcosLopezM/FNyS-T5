@@ -8,5 +8,37 @@
         \begin{equation*}
             \ch{\nu_{\tau} + e- -> \nu_{\e} + \tau-}
         \end{equation*}
+
+        \begin{solution}
+            Notemos que es un proceso leptónico, por lo que el número bariónico es cero y, además, es una interacción, por lo cual no se verificamos la conservación de la energía. Verificamos entonces si la carga se conserva,
+
+            \begin{align*}
+                \ch{\nu_{\tau} + e- &-> \nu_{\e} + \tau-},\\
+                \ch{0 - \(1\e\) &-> 0 - \(1\e\)},\\
+                \ch{- \(1\e\) &-> - \(1\e\)}.
+            \end{align*}
+
+            \setulcolor{pinkwave}\ul{La carga se conserva}. Ahora verificamos si el número leptónico por familia se conserva:
+
+            \begin{align*}
+                \ch{\nu_{\tau} + e- &-> \nu_{\e} + \tau-},\\
+                \ch{- \(1_{\mu}\) - \(1_{\e}\) &-> - \(1_{\mu}\) - \(1_{\e}\)}.
+            \end{align*}
+
+            \setulcolor{pinkwave}\ul{El número leptónico por familia se conserva}.
+
+            El diagrama de la interacción es
+
+            \begin{figure}[htb]
+                \centering
+                \feynmandiagram [vertical'=a to b] {
+                    i1 [particle=\(\tau^{-}\)] -- [fermion] a -- [fermion] f1 [particle=\(\nu_{\tau}\)], 
+                    a -- [scalar, edge label=\(W^{-}\)] b,
+                    i2 [particle=\(\e^{-}\)] -- [fermion] b -- [fermion] f2 [particle=\(\nu_{\e}\)],
+                };
+                \caption{Diagrama de Feynman para la interacción \ch{\nu_{\tau} + e- -> \nu_{\e} + \tau-}}
+                \label{fig:neutrinotau-electron-interaction}
+            \end{figure}
+        \end{solution}
     \end{exercise}
 \end{document}
