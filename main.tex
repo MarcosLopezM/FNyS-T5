@@ -28,6 +28,7 @@
 \usepackage{mismath}
 \savesymbol{tr}
 \savesymbol{rank}
+\usepackage{multicol}
 \usepackage{nicefrac}
 \usepackage[hyperref]{ntheorem}
 \usepackage{phfqit} % Bra-ket notation
@@ -255,6 +256,14 @@
 \newcommand*{\dotprod}[2]{#1 \mathbin{\cdot} #2\xspace}
 \newcommand*{\crossprod}[2]{#1 \mathbin{\mul} #2\xspace}
 \newcommand*{\basevect}[1]{\uvec{e}_{#1}\xspace}
+
+% Multicol environment for lists
+\SetEnumitemKey{twocol}{
+itemsep = 1\itemsep,
+parsep = 0.5\parsep,
+before = \raggedcolumns\begin{multicols}{2},
+after = \end{multicols}}
+
 
 % \newcommand*{\change}[1]{\Delta{#1}\xspace}
 
