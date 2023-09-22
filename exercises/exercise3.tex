@@ -32,9 +32,13 @@
             \begin{figure}[htb]
                 \centering
                 \feynmandiagram [vertical'=a to b] {
-                    i1 [particle=\(\tau^{-}\)] -- [fermion] a -- [fermion] f1 [particle=\(\nu_{\tau}\)], 
+                    i1 [particle=\(\tau^{-}\)] 
+                        -- [anti fermion] a 
+                        -- [anti fermion] f1 [particle=\(\nu_{\tau}\)], 
                     a -- [scalar, edge label=\(W^{-}\)] b,
-                    i2 [particle=\(\e^{-}\)] -- [fermion] b -- [fermion] f2 [particle=\(\nu_{\e}\)],
+                    i2 [particle=\(\e^{-}\)] 
+                        -- [fermion] b 
+                        -- [fermion] f2 [particle=\(\nu_{\e}\)],
                 };
                 \caption{Diagrama de Feynman para la interacción \ch{\nu_{\tau} + e- -> \nu_{\e} + \tau-}}
                 \label{fig:neutrinotau-electron-interaction}
