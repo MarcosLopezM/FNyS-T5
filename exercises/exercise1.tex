@@ -4,5 +4,80 @@
 \begin{document}
     \begin{exercise}
         Un anti-muón con \qty{1}{\GeV} de energía total cruza un blanco de silicio de \qty{10}{\cm} de longitud. Calcula la pérdida de energía tras cruzar dicha distancia.
+
+        \begin{solution}
+            Lo primero que debemos hacer es obtener el valor de la densidad del material del \ch{Si} y la masa del anti-muón \ch{\mu+}, cuyos valores, respectivamente, son
+
+            \begin{align}
+                \rho_{\ch{Si}} &= \qty{2.33}{\g\per\cm\cubed}\label{eq:SiDensity},\\
+                m_{\ch{\mu+}} &= \qty{105.658366}{\MeV\per\clightsq} = \qty{0.105658366}{\GeV\per\clightsq}\label{eq:AntimuonEnergy}.
+            \end{align}
+
+            Recordemos que la carga del anti-muón es \(+1\e\).
+
+            Y puesto que lo que queremos calcular es la pérdida de energía tras cruzar \qty{10}{\cm} en un medio material de densidad \(\rho_{\ch{Si}}\), que se obtiene a partir de la siguiente expresión
+
+            \begin{equation}
+                \change{E}_{\text{pérdida}} = -\rho_{\ch{Si}}\int_{0}^{10}\avg`\Big{\odv{E}{x}}\odif{x}.
+                \label{eq:EnergyLossThroughMaterial}
+            \end{equation}
+
+            Sin embargo, antes debemos calcular la pérdida de energía, dada por la ec. de Bethe-Bloch reducida, sin considerar además las correcciones por efecto de la densidad,
+
+            \begin{equation}
+                -\avg`\Big{\odv{E}{x}} = K z^{2} \dfrac{Z}{A}\dfrac{1}{\beta^{2}}\left[\ln\left(\dfrac{2m_{\e}c^{2}\beta^{2}\gamma^{2}}{I}\right) - \beta^{2}\right],
+                \label{eq:EnergyLoss}
+            \end{equation}
+
+            donde, \(K = \qty{0.3071}{\MeV\cm\squared\per\g}\), \(z\) la carga de la partícula incidente, \(Z\) el número de protones del medio, \(A\) el número de nucleones del medio, \(\beta,\gamma\)los factores relativistas de la partícula incidente e \(I\) el potencial de ionización.
+
+            Calculamos \(\gamma\),
+
+            \begin{align}
+                \gamma &= \dfrac{E_{T}}{E_{R}},\nonumber\\
+                &= \dfrac{\qty{1}{\GeV}}{\qty{0.105658366}{\GeV}},\nonumber\\
+                \gamma &= \num{9.4645},\nonumber\\
+                \implies\ \Aboxedsec{\gamma^{2} &= \num{89.5768}.}\label{eq:LorentzFactorSquared}
+            \end{align}
+
+            Y \(\beta\),
+
+            \begin{align}
+                \beta &= \sqrt{1 - \tfrac{1}{\gamma^{2}}},\nonumber\\
+                \beta &= \num{0.994611},\nonumber\\
+                \implies\ \Aboxedsec{\beta^{2} &= \num{0.988836}.}\label{eq:RelativeSpeedFactorSquared}
+            \end{align}
+
+            Por otro lado, para el \ch{Si} existen 3 isótopos estables, elegimos aquel con \(A = 28\) y \(Z = 14\). Además de la aproximación del potencial de ionización dada por
+
+            \begin{equation*}
+                I = 10Z\unit{\eV},
+            \end{equation*}
+
+            tal que,
+
+            \begin{align}
+                I &= 10(14) \unit{\eV},\nonumber\\
+                \Aboxedsec{I &= \qty{140}{\eV}.}\label{eq:IonizationPotential}
+            \end{align}
+
+            Ahora con todos elementos sí podemos calcular la pérdida de energía, por lo que sustituimos \crefrange{eq:LorentzFactorSquared}{eq:IonizationPotential} en \cref{eq:EnergyLoss},
+
+            \begin{align*}
+                -\avg`\Big{\odv{E}{x}} &= \begin{multlined}[t]
+                    (\qty{0.3071}{\MeV\cm\squared\per\g})(1)^{2}\dfrac{14}{28}\dfrac{1}{\num{0.988836}}\\\left[\ln\left(\dfrac{2(\qty{0.511}{\MeV\per\clightsq})c^{2}(\num{0.988836})(\num{89.5768})}{\qty{140}{\eV}}\right) - \num{0.988836}\right],
+                \end{multlined}\\
+                \Aboxedsec{-\avg`\Big{\odv{E}{x}} &= \qty{1.92407}{\MeV\cm\squared\per\g}.}
+            \end{align*}
+
+            Ahora, sustituimos el resultado anterior en \cref{eq:EnergyLossThroughMaterial},
+
+            \begin{align*}
+                \change{E}_{\text{pérdida}} &= -(\qty{2.33}{\g\per\cm\cubed})\int_{0}^{10} (\qty{1.92407}{\MeV\cm\squared\per\g})\odif{x},\\
+                &= (\qty{4.4831}{\MeV\per\cm})\ x\Big\rvert_{0}^{10},\\
+                &= (\qty{4.4831}{\MeV\per\cm})(\qty{10}{\cm}),\\
+                \Aboxedmain{\change{E}_{\text{pérdida}} &= \qty{44.831}{\MeV}.}
+            \end{align*}
+        \end{solution}
     \end{exercise}
 \end{document}

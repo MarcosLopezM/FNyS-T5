@@ -34,7 +34,7 @@
 \usepackage{phfqit} % Bra-ket notation
 \savesymbol{so}
 \usepackage{regexpatch}
-\usepackage[nolabel]{showlabels}
+\usepackage[inline]{showlabels}
 \usepackage{simples-matrices}
 \usepackage{siunitx}
 \usepackage{soul}
@@ -171,7 +171,7 @@
 % Configuración del paquete siunitx
 \sisetup{
 	output-decimal-marker = {.}, 
-	per-mode = symbol-or-fraction,
+	per-mode = symbol,
 	separate-uncertainty = false,
 	exponent-product = \mul,
   inter-unit-product = \ensuremath{{}\cdot{}}
@@ -291,7 +291,7 @@ after = \end{multicols}}
 \MakeAboxedCommand\Aboxedmain\mainresult
 \newcommand*\widefbox[1]{\fboxsep=3.5pt\fboxrule=1.2pt\fbox{#1}}
 
-\newcommand\secondaryresult[1]{\color{custom}\fboxsep=3.5pt\fbox{\color{black}#1}}
+\newcommand\secondaryresult[1]{\color{customBlue}\fboxsep=3.5pt\fbox{\color{black}#1}}
 \MakeAboxedCommand\Aboxedsec\secondaryresult
 
 %%%%%%%%%%%%%%%%%%Portada y configuración%%%%%%%%%%%%%%%%%%
