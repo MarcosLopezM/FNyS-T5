@@ -4,5 +4,34 @@
 \begin{document}
     \begin{exercise}
         Un fotón de \qty{35}{\MeV} pasa por una dispersión de Compton y sale con un ángulo de \(\tfrac{\pi}{3}\). ¿Cuál es la energía del fotón al salir? ¿Cuál es la energía cinética del electrón dispersado?
+
+        \begin{solution}
+            Para conocer la energía del fotón al salir usamos la relación dada por:
+
+            \begin{equation*}
+                h\nu^{\prime} = \dfrac{h\nu}{1 + \gamma(1 - \cos\theta)},
+            \end{equation*}
+
+            con \(\gamma = \tfrac{h\nu}{m_{\e}c^{2}}\). Así,
+
+            \begin{align}
+                h\nu &= \dfrac{\qty{35}{\MeV}}{1 + (\tfrac{35}{0.511})(1 - \cos(\tfrac{\pi}{3}))}\nonumber,\\
+                &= \qty{0.993009}{\MeV},\nonumber\\
+                \Aboxedmain{h\nu &\simeq \qty{1}{\MeV}.}\label{eq:PhotonEnergyAfterCollision}
+            \end{align}
+
+            Por otro lado, para saber la energía cinética del electrón disparado usamos que
+
+            \begin{equation*}
+                T_{\e} = h\nu - h\nu^{\prime}.
+            \end{equation*}
+
+            Sustituyendo \cref{eq:PhotonEnergyAfterCollision} en la expresión para \(T_{\e}\),
+
+            \begin{align*}
+                T_{\e} &= \qty{35}{\MeV} - \qty{1}{\MeV},\\
+                \Aboxedmain{T_{\e} &= \qty{34}{\MeV}.}
+            \end{align*}
+        \end{solution}
     \end{exercise}
 \end{document}
