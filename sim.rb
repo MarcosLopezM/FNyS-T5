@@ -19,9 +19,9 @@ end
 #longitud de radiacion
 
 def longr am,zm,dm
-  lor = dm*716.4*am/(zm*(zm+1)*Math.log(287/Math.sqrt(zm))) #cm
+  lor = 716.4*am/(zm*(zm+1)*Math.log(287/Math.sqrt(zm))) #cm
   par = (9.0/7.0)*lor
-  return lor
+  return lor / dm
 end
 
 #radio de Moliere
@@ -58,7 +58,8 @@ def med medio
 
   zmedn= 7 #Z del nitrogeno
   amedn= 14 #A del nitrogeno
-  denn= 0.0012506 #gr/cm^3 densidad N
+  # denn= 0.0012506 #gr/cm^3 densidad N
+  denn = 1.16528e-3
 
   if medio == "fe"
     return zmedfe,amedfe,denfe
@@ -79,30 +80,36 @@ end
 rr=Random.new #generamos la variable aleatoria
 
 #elegir fe,cu,n
-zm,am,dm = med("fe")
+zm,am,dm = med("n")
 
+count=0
+depths = Array.new
 
-epart=10e3 #MeV energía del electron >>30MeV
-alt=0  #la profundidad recorrida
-ee=epart  #energía inicial
-x0 = longr(zm,am,dm) #longitud de radiacion
-rad = rmo(am,zm,dm) #radio de Moliere
-while ee > ecrit(zm)
-  r1,r2 = randgauss(rr)
-  rho1 = r1+ x0
-  tet1 = 2*Math::PI*rr.rand
-  phi1 = Math.tan(rad/rho1)*rr.rand
-  rho2 = r2+x0
-  tet2 = 2*Math::PI*rr.rand
-  phi2 = Math.tan(rad/rho2)*rr.rand
-  x1= rho1*Math.cos(tet1)*Math.sin(phi1)
-  y1= rho1*Math.sin(tet1)*Math.sin(phi1)
-  z1= rho1*Math.cos(phi1)
-  x2= rho2*Math.cos(tet2)*Math.sin(phi2)
-  y2= rho2*Math.sin(tet2)*Math.sin(phi2)
-  z2= rho2*Math.cos(phi2)
-  alt+=mayorz(z1,z2)
-  ee=ee.to_f/2
-  puts "#{ee} cords (#{x1},#{y1},#{z1}) (#{x2},#{y2},#{z2})"
-end 
-puts"Profundidad= #{alt} cm., E_c = #{ecrit(zm)}"
+while count < 100
+  epart=2e4 #MeV energía del electron >>30MeV
+  alt=0  #la profundidad recorrida
+  ee=epart  #energía inicial
+  x0 = longr(am, zm, dm) #longitud de radiacion
+  rad = rmo(am,zm,dm) #radio de Moliere
+  while ee > ecrit(zm)
+    r1,r2 = randgauss(rr)
+    rho1 = r1+ x0
+    tet1 = 2*Math::PI*rr.rand
+    phi1 = Math.tan(rad/rho1)*rr.rand
+    rho2 = r2+x0
+    tet2 = 2*Math::PI*rr.rand
+    phi2 = Math.tan(rad/rho2)*rr.rand
+    x1= rho1*Math.cos(tet1)*Math.sin(phi1)
+    y1= rho1*Math.sin(tet1)*Math.sin(phi1)
+    z1= rho1*Math.cos(phi1)
+    x2= rho2*Math.cos(tet2)*Math.sin(phi2)
+    y2= rho2*Math.sin(tet2)*Math.sin(phi2)
+    z2= rho2*Math.cos(phi2)
+    alt+=mayorz(z1,z2)
+    ee=ee.to_f/2
+    puts "#{ee} cords (#{x1},#{y1},#{z1}) (#{x2},#{y2},#{z2})"
+  end 
+  puts"Profundidad= #{alt} cm., E_c = #{ecrit(zm)}"
+  depths.push(alt)
+  count += 1
+end
