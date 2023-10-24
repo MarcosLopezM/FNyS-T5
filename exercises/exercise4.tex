@@ -3,5 +3,34 @@
 \begin{document}
 	\begin{exercise}
 		Cual sería la mínima energía necesaria para poder acelerar núcleos de \ch{Pb}. Aproxímalo como una partícula única y considera que el radio es de \SI{180e-12}{\m}. Utiliza la aproximación hecha en clase ¿tiene sentido? ¿A qué energía acelera los núcleos de \ch{Pb} el LHC?
+
+		\begin{solution}
+			Sabemos que una aproximación para la energía cinética es
+
+			\begin{equation*}
+				\dfrac{E_{\text{kin}}}{mc^{2}} = \dfrac{1}{2d^{2}}\left(\dfrac{\hbar}{mc}\right)^{2},
+				\label{eq:KineticEnergyApproximation}
+			\end{equation*}
+
+			donde \(d\) es el radio de la partícula y la longitud de Compton \(\overline{\lambda}_{Pb} = \tfrac{\hbar}{mc}\).
+
+			Calculamos \(\overline{\lambda}_{Pb}\),
+
+			\begin{equation*}
+				\overline{\lambda}_{Pb} = \dfrac{\hbar c}{mc^{2}} = \dfrac{\SI{197.3}{\MeV\fm}}{\SI{193729.025}{\MeV}} = \SI{1.01843e-3}{\fm}.
+			\end{equation*}
+
+			Sustituyendo el valor del radio del plomo (\(r = \SI{180e3}{\fm}\)) y la longitud de onda de Compton en \cref{eq:KineticEnergyApproximation},
+
+			\begin{align*}
+				\dfrac{E_\text{kin}}{mc^{2}} &= \dfrac{1}{2}\left(\dfrac{\SI{1.01843e-3}{\fm}}{\SI{190e3}{\fm}}\right)^{2},\\
+				&= \dfrac{1}{2}(\num{3.20123e-17}),\\
+				\implies E_{\text{kin}} &= (\num{1.60062e-17})mc^{2},\\
+				&= (\num{1.60062e-17})(\SI{193729.025}{\MeV}),\\
+				\Aboxedmain{E_{\text{kin}} &= \SI{3.10087e-12}{\MeV}.}
+			\end{align*}
+
+			Mientras que en el LHC los núcleos de \ch{Pb} se aceleran a \SI{2.76}{\TeV\per\nucleon}.
+		\end{solution}
 	\end{exercise}
 \end{document}
