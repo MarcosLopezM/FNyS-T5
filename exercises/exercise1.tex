@@ -3,42 +3,13 @@
 
 \begin{document}
     \begin{exercise}
-        Determina el radio del ciclotrón necesario para acelerar \(\pi^{+}\) a \SI{10}{\MeV} si se tiene un campo magnético de \SI{2}{\T} (Teslas). Recuerda que la masa debe estar en kilogramos y la energía en Joules para poder usar Teslas dentro de la ecuación.
+        Calcula la masa, radio y energía de enlace de los siguientes núcleos (los excesos de masa se encuentran en \url{https://www-nds.iaea.org/amdc/ame2016/mass16.txt}):
 
-        \begin{solution}
-            Sabemos que la energía máxima de una partícula extraído de un ciclotrón a un radio \(R\) es
-
-            \begin{equation*}
-                T_{\text{máx}} = \dfrac{1}{2}\dfrac{(qBR)^{2}}{m}.
-            \end{equation*}
-
-            Y queremos conocer el radio del ciclotrón, resolvemos la expresión anterior para \(R\),
-
-            \begin{equation*}
-                R = \dfrac{\sqrt{2T_{\text{máx}}m}}{qB}.
-                \label{eq:cyclotronRadius}
-            \end{equation*}
-
-            Sin embargo, para poder \cref{eq:cyclotronRadius} la massa debe estar \unit{\kg} y la energía en \unit{\J}. Recordemos entonces que los factores de conversión para cada una, respectivamente, son
-
-            \begin{align*}
-                \SI{1}{\eV\per\clightsq} &= \SI{1.782661e-36}{\kg},\\
-                \SI{1}{\eV} &= \SI{1.602176e-19}{\J}.
-            \end{align*}
-
-            Por lo que los valores para la energía \(T_{\text{máx}}\) y la masa del pión \(\pi^{+}\), respectivamente, son:
-
-            \begin{align*}
-                T_{\text{máx}} &= \SI{1.602176e-12}{\J},\\
-                m_{\pi^{+}} &= \SI{2.495726e-28}{\kg}.
-            \end{align*}
-
-            Sustituyendo los valores correspondientes en \cref{eq:cyclotronRadius} tenemos que
-
-            \begin{align*}
-                R &= \dfrac{\sqrt{2(\SI{1.602176e-12}{\J})(\SI{2.495726E-28}{\kg})}}{(\SI{1.602176e-19}{\C})(\SI{2}{\T})}\\
-                \Aboxedmain{R &= \SI{0.088}{\m}.}
-            \end{align*}
-        \end{solution}
+		\begin{itemize}
+			\item \ch{^{2}H} (deuterio)
+			\item \ch{^{14}C} (carbono 14)
+			\item \ch{^{56}Fe} (hierro 56)
+			\item \ch{^{210}Po} (polonio 210)
+		\end{itemize}
     \end{exercise}
 \end{document}
