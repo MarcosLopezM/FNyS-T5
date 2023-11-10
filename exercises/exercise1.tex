@@ -5,11 +5,146 @@
     \begin{exercise}
         Calcula la masa, radio y energía de enlace de los siguientes núcleos (los excesos de masa se encuentran en \url{https://www-nds.iaea.org/amdc/ame2016/mass16.txt}):
 
+		\begin{solution}
+            El exceso de masa está definido como
+
+			\begin{equation*}
+				\delta(A, Z) = \qty[parse-numbers=false]{\left[M(A, Z) + A\right]}{\keV\per\clightsq} \cdot c^{2}.
+			\end{equation*}
+
+			Resolviendo para la masa tenemos que
+
+            \begin{equation}
+                M(A, Z) = \dfrac{\delta(A, Z)}{c^{2}} + A,
+                \label{eq:nuclearMasss}
+            \end{equation}
+
+            con \([A] = \unit{\keV\per\clightsq}\).
+
+            Y para la energía de enlace tenemos que
+
+            \begin{equation}
+                B.E.(A, Z) = \delta(A, Z) - Z\delta(1, 1) - (A - Z)\delta(1, 0),
+                \label{eq:bindingEnergy}
+            \end{equation}
+
+            donde \(\delta(1, 1)\) es el exceso de masa del protón y \(\delta(1, 0)\) es el exceso de masa del neutrón.
+
+            Finalmente, para calcular el radio del núcleo nos fijamos en la siguiente expresión:
+
+            \begin{equation}
+                R = 1.2 A^{1/3} \unit{\fm}.
+                \label{eq:nuclearRadius}
+            \end{equation}
+
+            Usando \crefrange{eq:nuclearMasss}{eq:nuclearRadius} calculamos lo que se nos pide para cada uno de los núcleos.
+            
 		\begin{itemize}
 			\item \ch{^{2}H} (deuterio)
+
+                    Antes de poder calcular la masa debemos convertir \(A\) de \unit{\uma} a \unit{\keV\per\clightsq}. Así,
+
+                    \begin{align*}
+                        A [\unit{\keV\per\clightsq}] &= \qty{931494.102}{\keV\per\clightsq} A,\\
+                        \implies A [\unit{\keV\per\clightsq}] &= 2(\qty{931494.102}{\keV\per\clightsq}),\\
+                        \Aboxedsec{A [\unit{\keV\per\clightsq}] &= \qty{1.86299e6}{\keV\per\clightsq}}
+                    \end{align*}
+
+                    Por lo que la masa del deuterio es
+
+                    \begin{align*}
+                        M(2, 1) &= \qty{13135.72176}{\keV\per\clightsq} + \qty{1.86299e6}{\keV\per\clightsq},\\
+                        \Aboxedmain{M(2, 1) &= \qty{1.87612e6}{\keV\per\clightsq}.}
+                    \end{align*}
+
+                    Mientras que su energía de enlace es
+
+                    \begin{align*}
+                        B.E.(2, 1) &= \delta(2, 1) - 1\delta(1, 1) - (2 - 1)\delta(1, 0),\\
+                        &= \qty{13135.72176}{\keV} - \qty{7288.97061}{\keV} - \qty{8071.31713}{\keV},\\
+                        \Aboxedmain{B.E.(2, 1) &= \qty{-2224.57}{\keV}.}
+                    \end{align*}
+
+                    Finalmente, su radio es de
+
+                    \begin{align*}
+                        R &= 1.2 (2)^{1/3}\unit{\fm},\\
+                        \Aboxedmain{R &= \qty{1.51191}{\fm}.}
+                    \end{align*}
+
 			\item \ch{^{14}C} (carbono 14)
-			\item \ch{^{56}Fe} (hierro 56)
+			
+				La masa para el \ch{^{14}C} es de
+
+				\begin{align*}
+					M(14, 6) &= \delta(14, 6) + 14 [\unit{\keV\per\clightsq}],\\
+					&= \qty{3019.89278}{\keV\per\clightsq} + \qty{13.0409e6}{\keV\per\clightsq},\\
+					\Aboxedmain{M(14, 6) &= \qty{13.0439e6}{\keV\per\clightsq}.}
+				\end{align*}
+
+				Y su energía de enlace de
+
+				\begin{align*}
+					B.E.(14, 6) &= \delta(14, 6) - 6\delta(1, 1) - 8\delta(1, 0),\\
+					\Aboxedmain{B.E.(14, 6) &= \qty{-105284.4680}{\keV}.}
+				\end{align*}
+
+				Mientras que su radio es de
+
+				\begin{align*}
+					R &= 1.2 (14)^{1/3}\unit{\fm},\\
+					\Aboxedmain{R &= \qty{2.89217}{\fm}.}
+				\end{align*}
+
+			\pagebreak
+                \item \ch{^{56}Fe} (hierro 56)
+			
+				La masa para el \ch{^{56}Fe} es de
+
+				\begin{align*}
+					M(56, 26) &= \delta(56, 26) + 56 [\unit{\keV\per\clightsq}],\\
+					&= \qty{-60607.082}{\keV\per\clightsq} + \qty{52.1637e6}{\keV\per\clightsq},\\
+					\Aboxedmain{M(56, 26) &= \qty{52.1031e6}{\keV\per\clightsq}.}
+				\end{align*}
+
+				Su energía de enlace de
+
+				\begin{align*}
+					B.E.(56, 26) &= \delta(56, 26) - 26\delta(1, 1) - 30\delta(1, 0),\\
+					\Aboxedmain{B.E.(56, 26) &= \qty{-492259.8318}{\keV}.}
+				\end{align*}
+
+				Y su radio de
+
+				\begin{align*}
+					R &= 1.2 (56)^{1/3}\unit{\fm},\\
+					\Aboxedmain{R &= \qty{4.59103}{\fm}.}
+				\end{align*}
+			
 			\item \ch{^{210}Po} (polonio 210)
+			
+			La masa del \ch{^{210}Po} es de
+
+			\begin{align*}
+				M(210, 84) &= \delta(210, 84) + 210 [\unit{\keV\per\clightsq}],\\
+				&= \qty{-15953.137}{\keV\per\clightsq} + \qty{195.614e6}{\keV\per\clightsq},\\
+				\Aboxedmain{M(210, 84) &= \qty{195.598e6}{\keV\per\clightsq}.}
+			\end{align*}
+
+			Su energía de enlace de
+
+			\begin{align*}
+				B.E.(210, 84) &= \delta(210, 84) - 84\delta(1, 1) - 126\delta(1, 0),\\
+				\Aboxedmain{B.E.(210, 84) &= \qty{-1.64521e6}{\keV}.}
+			\end{align*}
+
+			Y su radio de
+
+			\begin{align*}
+				R &= 1.2 (210)^{1/3}\unit{\fm},\\
+				\Aboxedmain{R &= \qty{7.13271}{\fm}.}
+			\end{align*}
 		\end{itemize}
+		\end{solution}
     \end{exercise}
 \end{document}

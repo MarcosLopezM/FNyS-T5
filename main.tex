@@ -6,7 +6,6 @@
 \usepackage{savesym} % Renames commands for conflicted packages
 \usepackage[export]{adjustbox}
 \usepackage{amsfonts, amsmath, amssymb}
-\usepackage{annotate-equations}
 \usepackage{bm}
 \usepackage{bookmark}
 \usepackage{chemformula}
@@ -33,25 +32,23 @@
 \usepackage[hyperref]{ntheorem}
 \usepackage{phfqit} % Bra-ket notation
 \savesymbol{so}
-\usepackage{regexpatch}
-\usepackage[nolabel]{showlabels}
-\usepackage{simples-matrices}
+% \usepackage{regexpatch}
+% \usepackage{simples-matrices}
 \usepackage{siunitx}
 \usepackage{soul}
 \usepackage{spbmark}
+\usepackage{standalone}
 \usepackage{subfiles}
 \usepackage{titling}
 \usepackage{tabularray}
 \usepackage{tasks}
-\usepackage{tensor}
-\usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{xcolor}
 \usepackage{xparse}
 \usepackage{xspace}
-\usepackage[
-    style = reading,
-    sorting = none,
-]{biblatex}
+% \usepackage[
+%     style = reading,
+%     sorting = none,
+% ]{biblatex}
 \usepackage{hyperref}
 \usepackage{cleveref}
 
@@ -182,7 +179,6 @@
 }
 
 % Declaring new units
-\DeclareSIUnit\kilogram{\kilo\gram}
 \DeclareSIUnit\nucleones{\text{nucleones}}
 \DeclareSIUnit\nucleon{\text{nucleón}}
 \DeclareSIUnit\density{\gram\per\cm\cubed}
@@ -191,6 +187,7 @@
 \DeclareSIUnit\barn{barn} % Barn  
 \DeclareSIUnit\mb{mb} % Millibarn
 \DeclareSIUnit\u{u} % Atomic mass unit
+\DeclareSIUnit\uma{uma} % Atomic mass unit
 \DeclareSIUnit\clight{c} % Speed of light
 \DeclareSIUnit\clightsq{\text{\ensuremath{c^{2}}}} % Speed of light squared
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -210,7 +207,7 @@
 \newcommand*{\classname}{Física Nuclear y Subnuclear}
 \newcommand*{\homeworknumber}{Tarea 5}
 \newcommand*{\name}{Marcos López Merino}
-\DTMsavedate{duedate}{2023-11-9}
+\DTMsavedate{duedate}{2023-11-14}
 
 % unit vector i
 \newcommand*{\uveci}{{\bm{\hat{\textnormal{\bfseries\i}}}}}
@@ -233,27 +230,9 @@
     \mathbb{#1}%
   }%
 }
-% Observable operator with a subscript and superscript optional arguments
-\NewDocumentCommand{\observable}{m o o}{%
-  \IfValueTF{#3}{%
-    \op{#1}{#2}{#3}%
-  }{%
-    \IfValueTF{#2}{%
-      \op{#1}{#2}%
-    }{%
-      \op{#1}%
-    }
-  }%
-}
-
 % unit vector k
 \newcommand*{\uvectk}{\uvec{k}}
 
-\newcommand*{\observer}{\mathcal{O}}
-\newcommand*{\primeobserver}{\mathcal{O}^{\prime}}
-\newcommand*{\biprimeobserver}{\mathcal{O}^{\prime\prime}}
-\newcommand*{\triprimeobserver}{\mathcal{O}^{\prime\prime\prime}}
-\newcommand*{\inlinesol}{\vspace*{10pt}\textbf{Solución}\vspace*{10pt}}
 \renewcommand*{\grad}{\nabla}
 \renewcommand*{\div}{\nabla \cdot}
 \renewcommand*{\curl}{\nabla \mul}
@@ -345,10 +324,8 @@ after = \end{multicols}}
     \subfileinclude{exercises/exercise3.tex}
     
     % Problema 4
-    \subfileinclude{exercises/exercise4.tex}
+    \include{exercises/exercise4.tex}
 
     % Problema 5
     \subfileinclude{exercises/exercise5.tex}
-
-    \nocite{*}
 \end{document}
