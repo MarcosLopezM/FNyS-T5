@@ -6,9 +6,120 @@
 
 		\begin{itemize}
 			\item \ch{^{3}He}
-			\item \ch{^{16}O}
-			\item \ch{^{41}Ca}
-			\item \ch{^{56}Fe}
+			
+			\begin{solution}
+
+				Tenemos que el número de protones y neutrones es:
+
+				\begin{align*}
+					Z &\colon 2 \implies \text{Apareado},\\
+					N &\colon 1.
+				\end{align*}
+
+				Así el llenado de capas de neutrones se ve como
+				
+				\begin{figure}[htb]
+                    \centering
+                    \input{img/shell-diagram1.tex}
+                    \caption{Llenado de niveles para el estado base de \ch{^{3}He}.}
+                    \label{fig:FirstExcitedState3He}
+                \end{figure}
+
+				Por lo que,
+
+				\begin{align*}
+					N &\colon (1s_{1/2})^{1} \implies \ell = 0,\\
+					\pi &= (-1)^{0} = +1,\\
+					J &= \tfrac{1}{2},\\
+					\Aboxedmain{J^{\pi} &= \tfrac{1}{2}^{+}.}
+				\end{align*}
+
+				Comparando con el valor experimental de \(J\) que se encuentra en \href{http://easyspin.org/documentation/isotopetable.html}{EasySpin} notamos que se obtiene el mismo resultado, \(J = \tfrac{1}{2}\).
+			\end{solution}
+			
+			\pagebreak
+                \item \ch{^{15}O}
+			
+			\begin{solution}
+				El número de protones y neutrones es
+
+				\begin{align*}
+					Z &\colon 8 \implies \text{Apareado},\\
+					N &\colon 7.
+				\end{align*}
+
+				El llenado de capas se hará con los neutrones, tal que
+
+				\begin{figure}[htb]
+                    \centering
+                    \input{img/shell-diagram2.tex}
+                    \caption{Llenado de niveles para el estado base de \ch{^{15}O}.}
+                    \label{fig:FirstExcitedState15O}
+                \end{figure}
+
+				Así,
+
+				\begin{align*}
+					N &\colon (1p_{1/2})^{1} \implies \ell = 1,\\
+					\pi &= (-1)^{1} = -1,\\
+					J &= \tfrac{1}{2},\\
+					\Aboxedmain{J^{\pi} &= \tfrac{1}{2}^{-}.}
+				\end{align*}
+
+				No podemos comparar el valor de \(J\) predicho con el de la página de \href{http://easyspin.org/documentation/isotopetable.html}{EasySpin} ya que no se encuentra registrado, tal vez debido a que no se ha medido experimentalmente.
+			\end{solution} 
+			
+			\pagebreak
+                \item \ch{^{41}Ca}
+			
+			\begin{solution}
+				El número de protones y neutrones es
+
+				\begin{align*}
+					Z &\colon 20 \implies \text{Apareado},\\
+					N &\colon 21.
+				\end{align*}
+
+				El llenado de capas se hará con los neutrones,
+
+				\begin{figure}[htb]
+                    \centering
+                    \input{img/shell-diagram3.tex}
+                    \caption{Llenado de niveles para el estado base de \ch{^{41}Ca}.}
+                    \label{fig:FirstExcitedState41Ca}
+                \end{figure}
+
+				Así,
+
+				\begin{align*}
+					N &\colon (1f_{7/2})^{1} \implies \ell = 3,\\
+					\pi &= (-1)^{3} = -1,\\
+					J &= \tfrac{7}{2},\\
+					\Aboxedmain{J^{\pi} &= \tfrac{7}{2}^{-}.}
+				\end{align*}
+
+				Comparando el valor de \(J\) con el valor experimental, se obtiene el mismo resultado, \(J = \tfrac{7}{2}\).
+			\end{solution}
+			
+			\pagebreak
+                \item \ch{^{56}Fe}
+			
+			\begin{solution}
+				El número de protones y neutrones es
+
+				\begin{align*}
+					Z &\colon 26 \implies \text{Apareado},\\
+					N &\colon 30 \implies \text{Apareado}.
+				\end{align*}
+
+				Y sabemos que para núcleos par-par el espín nuclear total es igual a 0 con paridad positiva, \idest
+
+				\begin{empheq}[box = \color{pinkwave}\fbox]{equation*}
+					J^{\pi} = 0^{+}.
+				\end{empheq}
+
+				Comparando con el valor de \(J\) registrado en \href{http://easyspin.org/documentation/isotopetable.html}{EasySpin} verificamos que se obtiene lo mismo.
+			\end{solution}
 		\end{itemize}
 
 		Compare con los valores de \(J\) observados experimentalmente: \url{http://easyspin.org/documentation/isotopetable.html}
