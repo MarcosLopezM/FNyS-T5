@@ -46,10 +46,10 @@
 \usepackage{xcolor}
 \usepackage{xparse}
 \usepackage{xspace}
-% \usepackage[
-%     style = reading,
-%     sorting = none,
-% ]{biblatex}
+\usepackage[
+    style = reading,
+    sorting = none,
+]{biblatex}
 \usepackage{hyperref}
 \usepackage{cleveref}
 
@@ -309,7 +309,7 @@ after = \end{multicols}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Bibliography
-% \addbibresource{bibliography.bib}
+\addbibresource{bibliography.bib}
 
 \begin{document}
     \maketitle
@@ -329,4 +329,6 @@ after = \end{multicols}}
 
     % Problema 5
     \subfileinclude{exercises/exercise5.tex}
+
+    \nocite{*}
 \end{document}
