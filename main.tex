@@ -2,6 +2,7 @@
 \usepackage{polyglossia}
 \setdefaultlanguage{spanish}
 \setotherlanguage{english}
+\gappto\captionsspanish{\def\tablename{Tabla}}
 \usepackage{fontspec}
 \usepackage{savesym} % Renames commands for conflicted packages
 \usepackage[export]{adjustbox}
@@ -64,7 +65,7 @@
 \setlength{\parskip}{0.5em} % Espacio entre párrafo
 \linespread{1.1} % line spacing
 \setlength{\jot}{10pt} % Space between lines in multiline eqs
-% \crefname{equation}{ec.}{ecs.} % Equation's cross-reference name
+\crefname{table}{Tabla}{} % Table's cross-reference name
 \crefname{equation}{}{} % Equation's cross-reference name
 
 % Line-breaker config
